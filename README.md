@@ -1,16 +1,43 @@
-# React + Vite
+# Wartek OS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A macOS-inspired Team Web OS where team members build self-contained widgets.
 
-Currently, two official plugins are available:
+## Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Open http://localhost:5173
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Adding Your Widget
 
-## Expanding the ESLint configuration
+1. Copy the template folder:
+   ```bash
+   cp -r src/apps/_templates src/apps/[your-name]/[widget-name]
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Update `manifest.json` with your widget info
+
+3. Build your widget in `index.html`, `style.css`, and `main.js`
+
+4. Refresh the page - your icon appears automatically!
+
+## Available Widgets
+
+- **Sticky Notes** - Classic yellow sticky notes (Sarah)
+- **Team Mood** - Emoji voting for team mood (Mira)
+- **Hex Converter** - Color format converter (Jason)
+- **Pomodoro** - Focus timer (Alex)
+
+## Tech Stack
+
+- React 18
+- Vite
+- CSS (no frameworks)
+- localStorage for persistence
+
+## License
+
+MIT
