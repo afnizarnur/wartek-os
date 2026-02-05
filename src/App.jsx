@@ -1,35 +1,67 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import { MenuBar } from './core/components/MenuBar';
+import { Dock } from './core/components/Dock';
+import { DesktopIcon } from './core/components/DesktopIcon';
+import { Window } from './core/components/Window';
+import { useOS } from './core/hooks/useOS';
+import { buildRegistry } from './core/lib/registry';
+import './core/styles/globals.css';
+import './index.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [widgets, setWidgets] = useState([]);
+  const { openWindows, openWindow, closeWindow, focusWindow } = useOS();
+
+  useEffect(() => {
+    const registry = buildRegistry();
+    setWidgets(Object.values(registry));
+  }, []);
+
+  const getWidget = (id) => widgets.find(w => w.id === id);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      <MenuBar activeApp={openWindows.find(w => w.isFocused)?.id} />
+
+      <div className="desktop">
+        {widgets.map((widget) => (
+          <DesktopIcon
+            key={widget.id}
+            widget={widget}
+            onOpen={openWindow}
+          />
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {openWindows.map((win) => {
+        const widget = getWidget(win.id);
+        if (!widget) return null;
+
+        return (
+          <Window
+            key={win.id}
+            title={widget.name}
+            defaultWidth={widget.defaultWidth}
+            defaultHeight={widget.defaultHeight}
+            resizable={widget.resizable}
+            onClose={() => closeWindow(win.id)}
+          >
+            <iframe
+              src={`${widget.path}/index.html`}
+              style={{ width: '100%', height: '100%', border: 'none' }}
+              title={widget.name}
+            />
+          </Window>
+        );
+      })}
+
+      <Dock
+        widgets={widgets}
+        onOpen={openWindow}
+        activeWindows={openWindows}
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;
