@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Mood</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="mood-header">
+    <h2>How's the team feeling today?</h2>
+  </div>
+  <div class="emoji-grid">
+    <button class="emoji-btn" data-mood="happy" data-emoji="😄">
+      <span class="emoji">😄</span>
+      <span class="label">Happy</span>
+      <span class="count" id="count-happy">0</span>
+    </button>
+    <button class="emoji-btn" data-mood="okay" data-emoji="😐">
+      <span class="emoji">😐</span>
+      <span class="label">Okay</span>
+      <span class="count" id="count-okay">0</span>
+    </button>
+    <button class="emoji-btn" data-mood="tired" data-emoji="😴">
+      <span class="emoji">😴</span>
+      <span class="label">Tired</span>
+      <span class="count" id="count-tired">0</span>
+    </button>
+    <button class="emoji-btn" data-mood="stressed" data-emoji="😰">
+      <span class="emoji">😰</span>
+      <span class="label">Stressed</span>
+      <span class="count" id="count-stressed">0</span>
+    </button>
+  </div>
+  <div class="my-vote" id="myVote">Your vote: None</div>
+  <script src="main.js"></script>
+</body>
+</html>
