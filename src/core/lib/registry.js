@@ -4,6 +4,14 @@ import.meta.glob('/src/apps/*/*.jpg', { eager: true, query: '?url', import: 'def
 import.meta.glob('/src/apps/*/*.jpeg', { eager: true, query: '?url', import: 'default' });
 import.meta.glob('/src/apps/*/*.svg', { eager: true, query: '?url', import: 'default' });
 
+// HMR support for registry
+if (import.meta.hot) {
+  import.meta.hot.accept(['/src/apps/*/manifest.json'], () => {
+    // Registry changed, let App.jsx handle the update
+    console.log('[HMR] Widget manifests changed, registry will refresh');
+  });
+}
+
 export function buildRegistry() {
   const modules = import.meta.glob('/src/apps/*/manifest.json', { eager: true });
   const assets = import.meta.glob('/src/apps/*/*.{png,jpg,jpeg,svg}', { eager: true, query: '?url', import: 'default' });
@@ -34,6 +42,7 @@ export function buildRegistry() {
       description: manifest.description,
       icon: icon,
       path: `/apps/${widgetId}`,
+      url: manifest.url,
       width: manifest.width,
       height: manifest.height,
       resizable: manifest.resizable,

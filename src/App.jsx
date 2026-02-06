@@ -9,12 +9,59 @@ import './core/styles/globals.css';
 import './index.css';
 
 function App() {
-  const [widgets, setWidgets] = useState([]);
-  const { openWindows, openWindow, closeWindow, focusWindow } = useOS();
+  // Lazy initial state - build registry once on mount
+  const [widgets] = useState(() => {
+    try {
+      return Object.values(buildRegistry());
+    } catch {
+      return [];
+    }
+  });
+  const { openWindows, openWindow, closeWindow } = useOS();
 
+  // Listen for widget HMR updates from iframes
   useEffect(() => {
-    const registry = buildRegistry();
-    setWidgets(Object.values(registry));
+    const handleWidgetHMR = (event) => {
+      if (event.data?.type === 'widget-hmr') {
+        // Reload the specific widget iframe
+        const iframes = document.querySelectorAll('iframe');
+        iframes.forEach(iframe => {
+          if (iframe.src === event.data.source ||
+              iframe.src.startsWith(event.data.source.split('?')[0])) {
+            const currentSrc = iframe.src;
+            iframe.src = '';
+            setTimeout(() => { iframe.src = currentSrc; }, 50);
+          }
+        });
+      }
+    };
+
+    window.addEventListener('message', handleWidgetHMR);
+    return () => window.removeEventListener('message', handleWidgetHMR);
+  }, []);
+
+  // HMR: Accept registry updates when widgets are added/modified
+  useEffect(() => {
+    if (!import.meta.hot) return;
+
+    import.meta.hot.accept('./core/lib/registry.js', (newModule) => {
+      if (newModule && newModule.buildRegistry) {
+        // Force full page reload to pick up new widgets
+        window.location.reload();
+      }
+    });
+
+    // Also listen for vite updates
+    import.meta.hot.on('vite:update', (data) => {
+      const paths = data?.paths;
+      if (!paths) return;
+      const hasWidgetChange = paths.some(p =>
+        p.includes('/src/apps/') || p.includes('/manifest.json')
+      );
+      if (hasWidgetChange) {
+        window.location.reload();
+      }
+    });
   }, []);
 
   const getWidget = (id) => widgets.find(w => w.id === id);
@@ -50,6 +97,7 @@ function App() {
             onClose={() => closeWindow(win.id)}
           >
             <iframe
+              key={`${win.id}-${iframeSrc}`}
               src={iframeSrc}
               style={{ width: '100%', height: '100%', border: 'none' }}
               title={widget.name}

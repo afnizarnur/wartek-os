@@ -44,29 +44,58 @@ function serveApps() {
           };
           res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream');
 
-          // Inject HMR client into HTML files
+          // Inject HMR client into HTML files for widgets
           if (ext === '.html') {
             let content = fs.readFileSync(filePath, 'utf-8');
-            // Reload iframe when parent window regains focus
+            // Smart HMR: Uses postMessage from parent for instant updates, falls back to polling
             const hmrScript = `<script>
               (function() {
-                let lastSrc = location.href;
-                setInterval(function() {
-                  if (document.visibilityState === 'visible') {
+                // Listen for HMR updates from parent window
+                window.addEventListener('message', function(event) {
+                  if (event.data && event.data.type === 'vitehmr') {
+                    location.reload();
+                  }
+                });
+
+                // Fallback polling (only if not in iframe with HMR support)
+                if (window === window.parent) {
+                  // Top-level window - use native Vite HMR
+                } else {
+                  // In iframe - check for updates when visible
+                  let lastEtag = null;
+                  let lastMod = null;
+
+                  function checkUpdate() {
+                    if (document.visibilityState !== 'visible') return;
+
                     var xhr = new XMLHttpRequest();
                     xhr.open('HEAD', location.href, true);
+
                     xhr.onload = function() {
-                      if (xhr.status === 200 && window.frameElement) {
+                      if (xhr.status === 200) {
                         var etag = xhr.getResponseHeader('ETag');
-                        if (window.lastEtag !== etag) {
-                          window.lastEtag = etag;
-                          location.reload();
+                        var lastModHeader = xhr.getResponseHeader('Last-Modified');
+
+                        if ((etag && etag !== lastEtag) || (lastModHeader && lastModHeader !== lastMod)) {
+                          lastEtag = etag;
+                          lastMod = lastModHeader;
+                          // Notify parent that we need reload
+                          if (window.parent !== window) {
+                            window.parent.postMessage({ type: 'widget-hmr', source: location.href }, '*');
+                          } else {
+                            location.reload();
+                          }
                         }
                       }
                     };
                     xhr.send();
                   }
-                }, 2000);
+
+                  // Poll every 1 second (faster than before)
+                  setInterval(checkUpdate, 1000);
+                  // Also check immediately
+                  checkUpdate();
+                }
               })();
             </script>`;
             content = content.replace('</body>', hmrScript + '</body>');
