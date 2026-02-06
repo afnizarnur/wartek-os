@@ -1,45 +1,78 @@
 .menu-bar {
-  height: 28px;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
+  height: 32px;
+  background: rgba(30, 30, 30, 0.75);
+  backdrop-filter: blur(28px) saturate(120%);
+  -webkit-backdrop-filter: blur(28px) saturate(120%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 16px;
   font-size: 13px;
   font-weight: 500;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0.5px 0 rgba(255, 255, 255, 0.1) inset;
 }
 
 .menu-left {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
 .apple-logo {
   font-size: 16px;
   font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0 0.5px 0.5px rgba(0, 0, 0, 0.2));
 }
 
 .menu-app {
   font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.2px;
 }
 
 .menu-item {
   cursor: pointer;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
 }
 
 .menu-item:hover {
-  opacity: 0.7;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 1);
 }
 
 .menu-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
-.menu-icon {
-  font-size: 14px;
+.menu-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.menu-icon-wrapper:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.menu-time,
+.menu-date {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
 }
