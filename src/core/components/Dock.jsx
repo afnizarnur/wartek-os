@@ -1,19 +1,21 @@
 import { useState } from 'react';
-import { StickyNote, Users, Palette, Timer } from 'lucide-react';
+import { StickyNote, Users, Palette, Timer, User } from 'lucide-react';
 import './Dock.css';
 
 const iconMap = {
   'sticky-notes': StickyNote,
   'team-mood': Users,
   'hex-converter': Palette,
-  'pomodoro': Timer
+  'pomodoro': Timer,
+  'afnizar': User
 };
 
 const iconColors = {
   'sticky-notes': { bg: '#fcd34d', fg: '#92400e' },
   'team-mood': { bg: '#f472b6', fg: '#9d174d' },
   'hex-converter': { bg: '#c084fc', fg: '#5b21b6' },
-  'pomodoro': { bg: '#f87171', gauge: '#ef4444', fg: '#7f1d1d' }
+  'pomodoro': { bg: '#f87171', gauge: '#ef4444', fg: '#7f1d1d' },
+  'afnizar': { bg: '#a78bfa', fg: '#5b21b6' }
 };
 
 export function Dock({ widgets, onOpen, activeWindows = [] }) {

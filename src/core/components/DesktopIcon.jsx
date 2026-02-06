@@ -1,18 +1,20 @@
-import { StickyNote, Users, Palette, Timer } from 'lucide-react';
+import { StickyNote, Users, Palette, Timer, User } from 'lucide-react';
 import './DesktopIcon.css';
 
 const iconMap = {
   'sticky-notes': StickyNote,
   'team-mood': Users,
   'hex-converter': Palette,
-  'pomodoro': Timer
+  'pomodoro': Timer,
+  'afnizar': User
 };
 
 const iconColors = {
   'sticky-notes': { bg: '#fef08a', fg: '#854d0e' },
   'team-mood': { bg: '#f9a8d4', fg: '#9d174d' },
   'hex-converter': { bg: '#d8b4fe', fg: '#5b21b6' },
-  'pomodoro': { bg: '#fca5a5', fg: '#991b1b' }
+  'pomodoro': { bg: '#fca5a5', fg: '#991b1b' },
+  'afnizar': { bg: '#c4b5fd', fg: '#5b21b6' }
 };
 
 export function DesktopIcon({ widget, onOpen }) {
