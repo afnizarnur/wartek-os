@@ -6,9 +6,9 @@ import.meta.glob('/src/apps/*/*.svg', { eager: true, query: '?url', import: 'def
 
 // HMR support for registry
 if (import.meta.hot) {
-  import.meta.hot.accept(['/src/apps/*/manifest.json'], () => {
-    // Registry changed, let App.jsx handle the update
-    console.log('[HMR] Widget manifests changed, registry will refresh');
+  import.meta.hot.accept((mod) => {
+    // Registry module reloaded, App.jsx will use fresh imports
+    console.log('[HMR] Registry reloaded');
   });
 }
 

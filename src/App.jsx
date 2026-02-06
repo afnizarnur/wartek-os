@@ -5,6 +5,7 @@ import { DesktopIcon } from './core/components/DesktopIcon';
 import { Window } from './core/components/Window';
 import { useOS } from './core/hooks/useOS';
 import { buildRegistry } from './core/lib/registry';
+import { PageFeedbackToolbarCSS } from 'agentation';
 import './core/styles/globals.css';
 import './index.css';
 
@@ -110,6 +111,11 @@ function App() {
         widgets={widgets}
         onOpen={openWindow}
         activeWindows={openWindows}
+      />
+
+      <PageFeedbackToolbarCSS
+        onCopy={(markdown) => console.log('[Agentation] Copied:', markdown)}
+        onSubmit={(output, annotations) => console.log('[Agentation] Submit:', output)}
       />
     </div>
   );
