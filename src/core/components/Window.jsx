@@ -21,7 +21,7 @@ export function Window({
   const [zIndex, setZIndex] = useState(++globalZIndex);
   const [isMaximized, setIsMaximized] = useState(false);
   const [preMaximizeState, setPreMaximizeState] = useState(null);
-  const dragRef = useRef(null);
+  const windowRef = useRef(null);
   const resizeRef = useRef(null);
   const dragOffset = useRef({ x: 0, y: 0 });
 
@@ -30,21 +30,28 @@ export function Window({
   }, []);
 
   const handleDragStart = useCallback((clientX, clientY) => {
-    dragOffset.current = { x: clientX - position.x, y: clientY - position.y };
+    if (windowRef.current) {
+      const rect = windowRef.current.getBoundingClientRect();
+      dragOffset.current = { x: clientX - rect.left, y: clientY - rect.top };
+    }
     setIsDragging(true);
-  }, [position.x, position.y]);
+  }, []);
 
   const handleResizeStart = useCallback((clientX, clientY) => {
     setIsResizing(true);
   }, []);
 
   useEffect(() => {
+    let currentX = position.x;
+    let currentY = position.y;
+
     const handleMouseMove = (e) => {
-      if (isDragging) {
-        setPosition({
-          x: e.clientX - dragOffset.current.x,
-          y: e.clientY - dragOffset.current.y
-        });
+      if (isDragging && windowRef.current) {
+        currentX = e.clientX - dragOffset.current.x;
+        currentY = e.clientY - dragOffset.current.y;
+        // Use transform - GPU accelerated, no layout
+        windowRef.current.style.transform = `translate(${currentX - position.x}px, ${currentY - position.y}px)`;
+        windowRef.current.style.transition = 'none';
       }
       if (isResizing) {
         setSize(prev => ({
@@ -55,6 +62,11 @@ export function Window({
     };
 
     const handleMouseUp = () => {
+      if (isDragging && windowRef.current) {
+        // Apply final position: remove transform, set actual left/top
+        windowRef.current.style.transform = '';
+        setPosition({ x: currentX, y: currentY });
+      }
       setIsDragging(false);
       setIsResizing(false);
     };
@@ -93,6 +105,7 @@ export function Window({
 
   return (
     <div
+      ref={windowRef}
       className={`window ${isMaximized ? 'maximized' : ''}`}
       style={{
         left: position.x,
@@ -105,11 +118,8 @@ export function Window({
     >
       <div
         className="window-titlebar"
-        ref={dragRef}
         onMouseDown={(e) => {
-          if (e.target === dragRef.current || e.target.closest('.window-titlebar')) {
-            handleDragStart(e.clientX, e.clientY);
-          }
+          handleDragStart(e.clientX, e.clientY);
         }}
       >
         <div className="window-controls">
