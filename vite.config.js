@@ -47,14 +47,27 @@ function serveApps() {
           // Inject HMR client into HTML files
           if (ext === '.html') {
             let content = fs.readFileSync(filePath, 'utf-8');
+            // Reload iframe when parent window regains focus
             const hmrScript = `<script>
-              if (window.location.hostname !== 'localhost') {
-                // Skip HMR for production
-              } else {
-                new EventSource('http://localhost:' + window.location.port + '/@vite/ping').addEventListener('message', () => {
-                  location.reload();
-                });
-              }
+              (function() {
+                let lastSrc = location.href;
+                setInterval(function() {
+                  if (document.visibilityState === 'visible') {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('HEAD', location.href, true);
+                    xhr.onload = function() {
+                      if (xhr.status === 200 && window.frameElement) {
+                        var etag = xhr.getResponseHeader('ETag');
+                        if (window.lastEtag !== etag) {
+                          window.lastEtag = etag;
+                          location.reload();
+                        }
+                      }
+                    };
+                    xhr.send();
+                  }
+                }, 2000);
+              })();
             </script>`;
             content = content.replace('</body>', hmrScript + '</body>');
             res.end(content);

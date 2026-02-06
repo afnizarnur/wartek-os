@@ -37,6 +37,9 @@ function App() {
         const widget = getWidget(win.id);
         if (!widget) return null;
 
+        // External URL widgets - embed directly in iframe
+        const iframeSrc = widget.url || `${widget.path}/index.html`;
+
         return (
           <Window
             key={win.id}
@@ -47,7 +50,7 @@ function App() {
             onClose={() => closeWindow(win.id)}
           >
             <iframe
-              src={`${widget.path}/index.html`}
+              src={iframeSrc}
               style={{ width: '100%', height: '100%', border: 'none' }}
               title={widget.name}
             />
