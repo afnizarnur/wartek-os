@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: transparent;
+  overflow: hidden;
+}
+
+.dio-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.dio-dialog {
+  background: white;
+  border-radius: 8px;
+  padding: 40px;
+  width: 520px;
+  max-width: 90vw;
+  animation: dioSlideUp 0.3s ease;
+}
+
+@keyframes dioSlideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.dio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.dio-warning {
+  width: 48px;
+  height: 48px;
+  background: #fabe24;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dio-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #45474A;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s ease;
+}
+
+.dio-close:hover {
+  opacity: 0.7;
+}
+
+.dio-content {
+  margin-bottom: 36px;
+}
+
+.dio-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #2f3031;
+  margin: 0 0 12px 0;
+}
+
+.dio-description {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #65686c;
+  margin: 0;
+}
+
+.dio-description strong {
+  font-weight: 700;
+}
+
+.dio-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.dio-btn {
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-width: 125px;
+}
+
+.dio-btn-secondary {
+  background: white;
+  border: 1px solid #808489;
+  color: #2f3031;
+}
+
+.dio-btn-secondary:hover {
+  background: #f5f5f5;
+}
+
+.dio-btn-primary {
+  background: #0b5fef;
+  border: none;
+  color: white;
+}
+
+.dio-btn-primary:hover {
+  background: #0a54d9;
+}
