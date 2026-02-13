@@ -10,10 +10,9 @@ const iconMap = {
   'forum-desain-publik': MessageSquare,
   'weton': Calendar,
   'rekomendasi-makan-malam': Utensils,
-  'rekomendasi-kopi-ciputat': Coffee,
-  'kata-kata-hari-ini': Quote,
   'dio-app': AlertCircle,
-  'makian-jawa': MessageCircle
+  'kata-kata-hari-ini': Quote,
+  'rekomendasi-kopi-ciputat': Coffee,
 };
 
 const iconColors = {

@@ -13,6 +13,7 @@ const iconMap = {
   'kata-kata-hari-ini': Quote,
   'dio-app': AlertCircle,
   'makian-jawa': MessageCircle
+  'kalender': Calendar
 };
 
 const iconColors = {
@@ -27,6 +28,7 @@ const iconColors = {
   'kata-kata-hari-ini': { bg: '#fef3c7', fg: '#d97706' },
   'dio-app': { bg: '#fabe24', fg: '#45474a' },
   'makian-jawa': { bg: '#fdba74', fg: '#9a3412' }
+  'kalender': { bg: '#fca5a5', fg: '#991b1b' }
 };
 
 export function DesktopIcon({ widget, onOpen }) {
