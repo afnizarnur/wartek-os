@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bubbleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+  <path d="M8 16C8 9.373 13.373 4 20 4H44C50.627 4 56 9.373 56 16V40C56 46.627 50.627 52 44 52H24L12 56V52H8C8 46.627 8 20 8 16Z" fill="url(#bubbleGrad)"/>
+  <path d="M16 24H48M16 32H40M16 40H44" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M44 8L48 4L52 8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="52,2 54,6 58,6 55,9 56,13 52,11 48,13 49,9 46,6 50,6" fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+</svg>
