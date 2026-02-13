@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StickyNote, Users, Palette, Timer, User, MessageSquare, Calendar, Utensils, Coffee, Quote, AlertCircle } from 'lucide-react';
+import { StickyNote, Users, Palette, Timer, MessageSquare, Calendar, Utensils, Coffee, Quote, AlertCircle } from 'lucide-react';
 import './Dock.css';
 
 const iconMap = {
@@ -56,7 +56,7 @@ export function Dock({ widgets, onOpen, activeWindows = [] }) {
               <div
                 className="dock-icon"
                 style={{
-                  background: `linear-gradient(135deg, ${colors.bg} 0%, ${colors.guide || colors.bg} 100%)`
+                  background: `linear-gradient(135deg, ${colors.bg} 0%, ${colors.gauge || colors.bg} 100%)`
                 }}
               >
                 <Icon size={28} color={colors.fg} strokeWidth={2} />
