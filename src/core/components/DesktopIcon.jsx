@@ -11,7 +11,8 @@ const iconMap = {
   'rekomendasi-makan-malam': Utensils,
   'rekomendasi-kopi-ciputat': Coffee,
   'kata-kata-hari-ini': Quote,
-  'dio-app': AlertCircle
+  'dio-app': AlertCircle,
+  'kalender': Calendar
 };
 
 const iconColors = {
@@ -24,7 +25,8 @@ const iconColors = {
   'rekomendasi-makan-malam': { bg: '#fdba74', fg: '#7c2d12' },
   'rekomendasi-kopi-ciputat': { bg: '#a78bfa', fg: '#5b21b6' },
   'kata-kata-hari-ini': { bg: '#fef3c7', fg: '#d97706' },
-  'dio-app': { bg: '#fabe24', fg: '#45474a' }
+  'dio-app': { bg: '#fabe24', fg: '#45474a' },
+  'kalender': { bg: '#fca5a5', fg: '#991b1b' }
 };
 
 export function DesktopIcon({ widget, onOpen }) {

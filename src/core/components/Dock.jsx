@@ -12,7 +12,8 @@ const iconMap = {
   'rekomendasi-makan-malam': Utensils,
   'rekomendasi-kopi-ciputat': Coffee,
   'kata-kata-hari-ini': Quote,
-  'dio-app': AlertCircle
+  'dio-app': AlertCircle,
+  'kalender': Calendar
 };
 
 const iconColors = {
@@ -25,7 +26,8 @@ const iconColors = {
   'rekomendasi-makan-malam': { bg: '#f97316', fg: '#fff' },
   'rekomendasi-kopi-ciputat': { bg: '#6d28d9', fg: '#fff' },
   'kata-kata-hari-ini': { bg: '#fef3c7', fg: '#d97706' },
-  'dio-app': { bg: '#fabe24', fg: '#45474a' }
+  'dio-app': { bg: '#fabe24', fg: '#45474a' },
+  'kalender': { bg: '#e74c3c', fg: '#fff' }
 };
 
 export function Dock({ widgets, onOpen, activeWindows = [] }) {
