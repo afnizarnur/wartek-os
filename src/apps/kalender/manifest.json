@@ -1,0 +1,14 @@
+{
+  "id": "kalender",
+  "name": "Kalender",
+  "author": "Wartek",
+  "version": "1.0.0",
+  "description": "Kalender bulanan dengan penanda tanggal hari ini",
+  "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23e74c3c' width='100' height='100' rx='10'/><rect fill='white' x='15' y='25' width='70' height='55' rx='3'/><rect fill='%23c0392b' x='15' y='25' width='70' height='15' rx='3'/><circle cx='30' cy='35' r='3' fill='white'/><circle cx='50' cy='35' r='3' fill='white'/><circle cx='70' cy='35' r='3' fill='white'/><text x='50' y='65' text-anchor='middle' fill='%23333' font-size='20' font-weight='bold'>15</text></svg>",
+  "width": 350,
+  "height": 420,
+  "resizable": false,
+  "defaultWidth": 350,
+  "defaultHeight": 420,
+  "tags": ["productivity", "calendar"]
+}

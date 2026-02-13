@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalender</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calendar">
+    <div class="calendar-header">
+      <button id="prevBtn" class="nav-btn">&lt;</button>
+      <h2 id="monthYear"></h2>
+      <button id="nextBtn" class="nav-btn">&gt;</button>
+    </div>
+    
+    <div class="calendar-grid">
+      <div class="weekday">Min</div>
+      <div class="weekday">Sen</div>
+      <div class="weekday">Sel</div>
+      <div class="weekday">Rab</div>
+      <div class="weekday">Kam</div>
+      <div class="weekday">Jum</div>
+      <div class="weekday">Sab</div>
+    </div>
+    
+    <div class="calendar-days" id="calendarDays"></div>
+    
+    <div class="calendar-footer">
+      <span id="todayDate"></span>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
