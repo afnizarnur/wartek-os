@@ -1,0 +1,14 @@
+{
+  "id": "rekomendasi-kopi-ciputat",
+  "name": "Rekomendasi Kopi Ciputat",
+  "author": "Wartek Team",
+  "version": "1.0.0",
+  "description": "Rekomendasi coffee shop di daerah Ciputat",
+  "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%236d28d9' width='100' height='100' rx='10'/><text x='50' y='65' text-anchor='middle' fill='white' font-size='45'>☕</text></svg>",
+  "width": 350,
+  "height": 480,
+  "resizable": true,
+  "defaultWidth": 350,
+  "defaultHeight": 480,
+  "tags": ["food", "coffee", "recommendation"]
+}

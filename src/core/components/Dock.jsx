@@ -1,21 +1,28 @@
-import { useState } from 'react';
-import { StickyNote, Users, Palette, Timer, User, MessageSquare } from 'lucide-react';
-import './Dock.css';
+import { useState } from "react";
+import {
+  StickyNote,
+  Users,
+  Palette,
+  Timer,
+  User,
+  MessageSquare,
+} from "lucide-react";
+import "./Dock.css";
 
 const iconMap = {
-  'sticky-notes': StickyNote,
-  'team-mood': Users,
-  'hex-converter': Palette,
-  'pomodoro': Timer,
-  'forum-desain-publik': MessageSquare
+  "sticky-notes": StickyNote,
+  "team-mood": Users,
+  "hex-converter": Palette,
+  pomodoro: Timer,
+  "forum-desain-publik": MessageSquare,
 };
 
 const iconColors = {
-  'sticky-notes': { bg: '#fcd34d', fg: '#92400e' },
-  'team-mood': { bg: '#f472b6', fg: '#9d174d' },
-  'hex-converter': { bg: '#c084fc', fg: '#5b21b6' },
-  'pomodoro': { bg: '#f87171', gauge: '#ef4444', fg: '#7f1d1d' },
-  'forum-desain-publik': { bg: '#60a5fa', fg: '#1e40af' }
+  "sticky-notes": { bg: "#fcd34d", fg: "#92400e" },
+  "team-mood": { bg: "#f472b6", fg: "#9d174d" },
+  "hex-converter": { bg: "#c084fc", fg: "#5b21b6" },
+  pomodoro: { bg: "#f87171", gauge: "#ef4444", fg: "#7f1d1d" },
+  "forum-desain-publik": { bg: "#60a5fa", fg: "#1e40af" },
 };
 
 export function Dock({ widgets, onOpen, activeWindows = [] }) {
@@ -23,7 +30,7 @@ export function Dock({ widgets, onOpen, activeWindows = [] }) {
 
   const getIcon = (widgetId) => {
     const IconComponent = iconMap[widgetId] || StickyNote;
-    const colors = iconColors[widgetId] || { bg: '#e5e7eb', fg: '#374151' };
+    const colors = iconColors[widgetId] || { bg: "#e5e7eb", fg: "#374151" };
     return { Icon: IconComponent, colors };
   };
 
@@ -31,14 +38,14 @@ export function Dock({ widgets, onOpen, activeWindows = [] }) {
     <div className="dock">
       <div className="dock-container">
         {widgets.map((widget) => {
-          const isActive = activeWindows.some(w => w.id === widget.id);
+          const isActive = activeWindows.some((w) => w.id === widget.id);
           const isHovered = hovered === widget.id;
           const { Icon, colors } = getIcon(widget.id);
 
           return (
             <div
               key={widget.id}
-              className={`dock-item ${isActive ? 'active' : ''} ${isHovered ? 'hovered' : ''}`}
+              className={`dock-item ${isActive ? "active" : ""} ${isHovered ? "hovered" : ""}`}
               onClick={() => onOpen(widget.id)}
               onMouseEnter={() => setHovered(widget.id)}
               onMouseLeave={() => setHovered(null)}
@@ -46,7 +53,7 @@ export function Dock({ widgets, onOpen, activeWindows = [] }) {
               <div
                 className="dock-icon"
                 style={{
-                  background: `linear-gradient(135deg, ${colors.bg} 0%, ${colors.guide || colors.bg} 100%)`
+                  background: `linear-gradient(135deg, ${colors.bg} 0%, ${colors.gauge || colors.bg} 100%)`,
                 }}
               >
                 <Icon size={28} color={colors.fg} strokeWidth={2} />
