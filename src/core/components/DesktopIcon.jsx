@@ -1,4 +1,4 @@
-import { StickyNote, Users, Palette, Timer, User, MessageSquare, Calendar, Utensils, Flame, PiggyBank } from 'lucide-react';
+import { StickyNote, Users, Palette, Timer, User, MessageSquare, Calendar, Utensils, Coffee, Quote, AlertCircle, MessageCircle } from 'lucide-react';
 import './DesktopIcon.css';
 
 const iconMap = {
@@ -11,6 +11,11 @@ const iconMap = {
   'rekomendasi-makan-malam': Utensils,
   'egg-timer': Flame,
   'savings-jar': PiggyBank
+  'rekomendasi-kopi-ciputat': Coffee,
+  'kata-kata-hari-ini': Quote,
+  'dio-app': AlertCircle,
+  'makian-jawa': MessageCircle
+  'kalender': Calendar
 };
 
 const iconColors = {
@@ -23,6 +28,11 @@ const iconColors = {
   'rekomendasi-makan-malam': { bg: '#fdba74', fg: '#7c2d12' },
   'egg-timer': { bg: '#fbbf24', fg: '#92400e' },
   'savings-jar': { bg: '#fbbf24', fg: '#92400e' }
+  'rekomendasi-kopi-ciputat': { bg: '#a78bfa', fg: '#5b21b6' },
+  'kata-kata-hari-ini': { bg: '#fef3c7', fg: '#d97706' },
+  'dio-app': { bg: '#fabe24', fg: '#45474a' },
+  'makian-jawa': { bg: '#fdba74', fg: '#9a3412' }
+  'kalender': { bg: '#fca5a5', fg: '#991b1b' }
 };
 
 export function DesktopIcon({ widget, onOpen }) {
