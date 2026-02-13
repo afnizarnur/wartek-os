@@ -23,7 +23,7 @@ const iconColors = {
   'forum-desain-publik': { bg: '#60a5fa', fg: '#1e40af' },
   'dio-app': { bg: '#fabe24', fg: '#45474a' },
   'egg-timer': { bg: '#fbbf24', fg: '#92400e' },
-  'savings-jar': { bg: '#fbbf24', fg: '#92400e' }
+  'savings-jar': { bg: '#fbbf24', fg: '#92400e' },
   'weton': { bg: '#fdba74', fg: '#9a3412' },
   'rekomendasi-makan-malam': { bg: '#f97316', fg: '#fff' },
   'rekomendasi-kopi-ciputat': { bg: '#6d28d9', fg: '#fff' },
