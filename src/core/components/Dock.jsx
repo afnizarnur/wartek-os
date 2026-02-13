@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StickyNote, Users, Palette, Timer, User, MessageSquare, AlertCircle, Flame } from 'lucide-react';
+import { StickyNote, Users, Palette, Timer, User, MessageSquare, AlertCircle, Flame, PiggyBank } from 'lucide-react';
 import './Dock.css';
 
 const iconMap = {
@@ -9,7 +9,8 @@ const iconMap = {
   'pomodoro': Timer,
   'forum-desain-publik': MessageSquare,
   'dio-app': AlertCircle,
-  'egg-timer': Flame
+  'egg-timer': Flame,
+  'savings-jar': PiggyBank
 };
 
 const iconColors = {
@@ -19,7 +20,8 @@ const iconColors = {
   'pomodoro': { bg: '#f87171', gauge: '#ef4444', fg: '#7f1d1d' },
   'forum-desain-publik': { bg: '#60a5fa', fg: '#1e40af' },
   'dio-app': { bg: '#fabe24', fg: '#45474a' },
-  'egg-timer': { bg: '#fbbf24', fg: '#92400e' }
+  'egg-timer': { bg: '#fbbf24', fg: '#92400e' },
+  'savings-jar': { bg: '#fbbf24', fg: '#92400e' }
 };
 
 export function Dock({ widgets, onOpen, activeWindows = [] }) {

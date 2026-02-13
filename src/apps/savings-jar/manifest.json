@@ -1,0 +1,14 @@
+{
+  "id": "savings-jar",
+  "name": "Savings Jar",
+  "author": "Wartek Team",
+  "version": "1.0.0",
+  "description": "Watch your savings grow with a visual jar and celebrate when you hit your goals!",
+  "icon": "asset:icon.svg",
+  "width": 320,
+  "height": 480,
+  "resizable": false,
+  "defaultWidth": 320,
+  "defaultHeight": 480,
+  "tags": ["finance", "productivity"]
+}

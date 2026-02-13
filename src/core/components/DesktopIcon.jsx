@@ -1,4 +1,4 @@
-import { StickyNote, Users, Palette, Timer, User, MessageSquare, Calendar, Utensils, Flame } from 'lucide-react';
+import { StickyNote, Users, Palette, Timer, User, MessageSquare, Calendar, Utensils, Flame, PiggyBank } from 'lucide-react';
 import './DesktopIcon.css';
 
 const iconMap = {
@@ -9,7 +9,8 @@ const iconMap = {
   'forum-desain-publik': MessageSquare,
   'weton': Calendar,
   'rekomendasi-makan-malam': Utensils,
-  'egg-timer': Flame
+  'egg-timer': Flame,
+  'savings-jar': PiggyBank
 };
 
 const iconColors = {
@@ -20,7 +21,8 @@ const iconColors = {
   'forum-desain-publik': { bg: '#93c5fd', fg: '#1e40af' },
   'weton': { bg: '#fed7aa', fg: '#9a3412' },
   'rekomendasi-makan-malam': { bg: '#fdba74', fg: '#7c2d12' },
-  'egg-timer': { bg: '#fbbf24', fg: '#92400e' }
+  'egg-timer': { bg: '#fbbf24', fg: '#92400e' },
+  'savings-jar': { bg: '#fbbf24', fg: '#92400e' }
 };
 
 export function DesktopIcon({ widget, onOpen }) {
