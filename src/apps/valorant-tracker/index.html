@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valorant Global Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <nav class="nav">
+      <div class="nav-logo">
+        <span class="logo-v">V</span>
+        <span class="logo-text">VALORANT Tracker</span>
+      </div>
+      <div class="nav-tabs">
+        <button class="nav-tab active" data-view="home">Home</button>
+        <button class="nav-tab" data-view="tracker">Tracker</button>
+      </div>
+    </nav>
+
+    <main class="content">
+      <!-- HOME VIEW -->
+      <section id="home-view" class="view active">
+        <div class="region-tabs">
+          <button class="region-tab active" data-region="apac">APAC</button>
+          <button class="region-tab" data-region="na">NA</button>
+          <button class="region-tab" data-region="eu">EU</button>
+          <button class="region-tab" data-region="kr">KR</button>
+          <button class="region-tab" data-region="latam">LATAM</button>
+        </div>
+
+        <div class="leaderboard-container">
+          <div class="leaderboard-header">
+            <h2>Top 10 Players - <span id="current-region">APAC</span></h2>
+          </div>
+          <table class="leaderboard">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>RR</th>
+                <th>Win Rate</th>
+                <th>K/D</th>
+                <th>ACS</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TRACKER VIEW -->
+      <section id="tracker-view" class="view">
+        <div class="search-section">
+          <div class="search-box">
+            <input type="text" id="riot-id" placeholder="Enter Riot ID (Name#Tag)" />
+            <select id="region-select">
+              <option value="apac">APAC</option>
+              <option value="na">NA</option>
+              <option value="eu">EU</option>
+              <option value="kr">KR</option>
+              <option value="latam">LATAM</option>
+            </select>
+            <button id="search-btn" class="search-btn">Search</button>
+          </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+          <div class="spinner"></div>
+          <p>Searching for player...</p>
+        </div>
+
+        <div id="error" class="error hidden">
+          <p>Player not found. Please check the Riot ID and region.</p>
+        </div>
+
+        <div id="player-dashboard" class="dashboard hidden">
+          <div class="player-header">
+            <div class="player-avatar">
+              <span id="player-initial">P</span>
+            </div>
+            <div class="player-info">
+              <h2 id="player-name">Player Name</h2>
+              <span id="player-tag" class="player-tag">#0000</span>
+              <span id="player-rank" class="player-rank">Radiant</span>
+            </div>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <span class="kpi-value" id="kpi-rr">0</span>
+              <span class="kpi-label">Current RR</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-value" id="kpi-winrate">0%</span>
+              <span class="kpi-label">Win Rate</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-value" id="kpi-kd">0.00</span>
+              <span class="kpi-label">K/D Ratio</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-value" id="kpi-acs">0</span>
+              <span class="kpi-label">ACS</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-value" id="kpi-kast">0%</span>
+              <span class="kpi-label">KAST</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-value" id="kpi-headshot">0%</span>
+              <span class="kpi-label">Headshot %</span>
+            </div>
+          </div>
+
+          <div class="charts-section">
+            <div class="chart-container">
+              <h3>Performance Trend</h3>
+              <canvas id="performance-chart"></canvas>
+            </div>
+            <div class="chart-container">
+              <h3>Agent Distribution</h3>
+              <canvas id="agent-chart"></canvas>
+            </div>
+          </div>
+
+          <div class="match-history">
+            <h3>Recent Matches</h3>
+            <div id="matches-list" class="matches-list">
+            </div>
+          </div>
+        </div>
+
+        <div id="empty-state" class="empty-state">
+          <div class="empty-icon">🎮</div>
+          <h3>Track Any Player</h3>
+          <p>Enter a Riot ID to view player stats, performance charts, and match history.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
