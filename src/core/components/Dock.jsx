@@ -10,10 +10,9 @@ const iconMap = {
   'forum-desain-publik': MessageSquare,
   'weton': Calendar,
   'rekomendasi-makan-malam': Utensils,
-  'rekomendasi-kopi-ciputat': Coffee,
-  'kata-kata-hari-ini': Quote,
   'dio-app': AlertCircle,
-  'kalender': Calendar
+  'kata-kata-hari-ini': Quote,
+  'rekomendasi-kopi-ciputat': Coffee,
 };
 
 const iconColors = {
@@ -25,9 +24,8 @@ const iconColors = {
   'weton': { bg: '#fdba74', fg: '#9a3412' },
   'rekomendasi-makan-malam': { bg: '#f97316', fg: '#fff' },
   'rekomendasi-kopi-ciputat': { bg: '#6d28d9', fg: '#fff' },
-  'kata-kata-hari-ini': { bg: '#fef3c7', fg: '#d97706' },
   'dio-app': { bg: '#fabe24', fg: '#45474a' },
-  'kalender': { bg: '#e74c3c', fg: '#fff' }
+  'kata-kata-hari-ini': { bg: '#667eea', fg: '#ffffff' }
 };
 
 export function Dock({ widgets, onOpen, activeWindows = [] }) {
@@ -58,7 +56,7 @@ export function Dock({ widgets, onOpen, activeWindows = [] }) {
               <div
                 className="dock-icon"
                 style={{
-                  background: `linear-gradient(135deg, ${colors.bg} 0%, ${colors.guide || colors.bg} 100%)`
+                  background: `linear-gradient(135deg, ${colors.bg} 0%, ${colors.gauge || colors.bg} 100%)`
                 }}
               >
                 <Icon size={28} color={colors.fg} strokeWidth={2} />

@@ -1,4 +1,25 @@
 {
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "Figma Desktop": {
+      "type": "remote",
+      "url": "http://127.0.0.1:3845/mcp",
+      "enabled": true
+    }
+  }
+}
+{
+<<<<<<< HEAD
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "Figma Desktop": {
+      "type": "remote",
+      "url": "http://127.0.0.1:3845/mcp",
+      "enabled": true
+    }
+  }
+}
+=======
     "$schema": "https://opencode.ai/config.json",
     "mcp": {
       "Figma Desktop": {
@@ -7,3 +28,4 @@
       }
     }
   }
+>>>>>>> d76703dcace657e848c2ca51ad2e5b5b6592a33e
