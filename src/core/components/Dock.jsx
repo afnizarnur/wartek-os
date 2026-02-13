@@ -24,8 +24,8 @@ const iconColors = {
   'weton': { bg: '#fdba74', fg: '#9a3412' },
   'rekomendasi-makan-malam': { bg: '#f97316', fg: '#fff' },
   'rekomendasi-kopi-ciputat': { bg: '#6d28d9', fg: '#fff' },
-  'kata-kata-hari-ini': { bg: '#fef3c7', fg: '#d97706' },
-  'dio-app': { bg: '#fabe24', fg: '#45474a' }
+  'dio-app': { bg: '#fabe24', fg: '#45474a' },
+  'kata-kata-hari-ini': { bg: '#667eea', fg: '#ffffff' }
 };
 
 export function Dock({ widgets, onOpen, activeWindows = [] }) {
