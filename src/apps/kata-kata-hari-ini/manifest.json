@@ -1,0 +1,14 @@
+{
+  "id": "kata-kata-hari-ini",
+  "name": "Kata Kata Hari Ini",
+  "author": "Wartek",
+  "version": "1.0.0",
+  "description": "Display inspirational quotes for the day",
+  "icon": "asset:icon.svg",
+  "width": 350,
+  "height": 400,
+  "resizable": false,
+  "defaultWidth": 350,
+  "defaultHeight": 400,
+  "tags": ["productivity", "inspiration"]
+}
