@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings Jar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="widget-content">
+    <h1>Savings Jar</h1>
+    
+    <div class="jar-container">
+      <div class="jar">
+        <div class="jar-lid"></div>
+        <div class="jar-body">
+          <div class="coins" id="coins"></div>
+        </div>
+        <div class="jar-label">
+          <span id="percentage">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-label">Saved</span>
+        <span class="stat-value" id="savedAmount">$0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Goal</span>
+        <span class="stat-value" id="goalAmount">$100</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="input-group">
+        <input type="number" id="addAmount" placeholder="Amount" min="1">
+        <button id="addBtn">+ Add</button>
+      </div>
+      <button id="setGoalBtn" class="secondary">Set Goal</button>
+    </div>
+
+    <div class="goal-input-container" id="goalInputContainer">
+      <input type="number" id="goalInput" placeholder="Enter goal amount" min="1">
+      <button id="saveGoalBtn">Save</button>
+      <button id="cancelGoalBtn" class="secondary">Cancel</button>
+    </div>
+
+    <button id="resetBtn" class="danger">Reset</button>
+  </div>
+  <div class="confetti-container" id="confettiContainer"></div>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #2c2c2c 0%, #1a1a1a 100%);
+  padding: 20px;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.egg-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.egg-container {
+  position: relative;
+  width: 120px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.egg {
+  width: 100px;
+  height: 130px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fbbf24 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: relative;
+  transition: all 0.5s ease;
+  box-shadow: 
+    inset -15px -10px 30px rgba(0,0,0,0.1),
+    inset 10px 10px 20px rgba(255,255,255,0.4),
+    0 10px 30px rgba(0,0,0,0.3);
+}
+
+.egg::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  width: 30%;
+  height: 20%;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  transform: rotate(-30deg);
+}
+
+.egg-yolk {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 30% 30%, #fcd34d, #f59e0b);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.egg.soft .egg-yolk {
+  opacity: 1;
+}
+
+.egg.medium .egg-yolk {
+  opacity: 0.6;
+}
+
+.egg.hard .egg-yolk {
+  opacity: 0;
+}
+
+.egg.soft {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fbbf24 100%);
+}
+
+.egg.medium {
+  background: linear-gradient(135deg, #fed7aa 0%, #fb923c 50%, #ea580c 100%);
+}
+
+.egg.hard {
+  background: linear-gradient(135deg, #fdba74 0%, #ea580c 50%, #c2410c 100%);
+}
+
+.steam {
+  position: absolute;
+  top: -20px;
+  width: 8px;
+  height: 20px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  opacity: 0;
+  animation: steam 2s infinite;
+}
+
+.steam-1 { left: 30%; animation-delay: 0s; }
+.steam-2 { left: 50%; animation-delay: 0.5s; }
+.steam-3 { left: 70%; animation-delay: 1s; }
+
+@keyframes steam {
+  0% { opacity: 0; transform: translateY(0) scale(1); }
+  50% { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-30px) scale(1.5); }
+}
+
+.egg-timer:not(.running) .steam {
+  animation-play-state: paused;
+}
+
+.timer-display {
+  font-size: 48px;
+  font-weight: 200;
+  color: white;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 2px;
+}
+
+.preset-label {
+  font-size: 14px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.presets {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.preset-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #3a3a3a;
+  color: #888;
+  transition: all 0.2s;
+}
+
+.preset-btn:hover:not(.active) {
+  background: #4a4a4a;
+  color: white;
+}
+
+.preset-btn.active {
+  background: #fbbf24;
+  color: #92400e;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.control-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #3a3a3a;
+  color: white;
+  transition: all 0.2s;
+}
+
+.control-btn:hover:not(:disabled) {
+  background: #4a4a4a;
+}
+
+.control-btn.primary {
+  background: #fbbf24;
+  color: #92400e;
+}
+
+.control-btn.primary:hover:not(:disabled) {
+  background: #f59e0b;
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.doneness-meter {
+  width: 100%;
+  max-width: 200px;
+  margin-top: 8px;
+}
+
+.meter-label {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.meter-track {
+  height: 6px;
+  background: #3a3a3a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #fef3c7, #fbbf24, #f59e0b, #ea580c);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
