@@ -1,14 +1,14 @@
 {
   "id": "kata-kata-hari-ini",
-  "name": "Kata-Kata Hari Ini",
-  "author": "Wartek Team",
+  "name": "Kata Kata Hari Ini",
+  "author": "Wartek",
   "version": "1.0.0",
-  "description": "Daily inspirational, humorous, and religious quotes in Indonesian",
+  "description": "Display inspirational quotes for the day",
   "icon": "asset:icon.svg",
-  "width": 380,
-  "height": 676,
+  "width": 350,
+  "height": 400,
   "resizable": false,
-  "defaultWidth": 380,
-  "defaultHeight": 676,
-  "tags": ["inspiration", "quotes", "daily", "indonesian"]
+  "defaultWidth": 350,
+  "defaultHeight": 400,
+  "tags": ["productivity", "inspiration"]
 }
