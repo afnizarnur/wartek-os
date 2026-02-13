@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dio App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dio-overlay" id="dioOverlay">
+    <div class="dio-dialog">
+      <div class="dio-header">
+        <div class="dio-warning">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" fill="#fabe24" />
+            <path d="M12 8v4M12 16h.01" stroke="#45474A" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </div>
+        <button class="dio-close" id="closeBtn" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="dio-content">
+        <h2 class="dio-title">Pastikan Institusi Anda Sudah Sesuai</h2>
+        <p class="dio-description">
+          Saat ini Anda masuk sebagai <strong>Admin Institusi</strong> dari institusi <strong>Direktorat SD</strong>.
+          Jika perlu mengubah institusi, silakan ubah di Beranda.
+        </p>
+      </div>
+      <div class="dio-buttons">
+        <button class="dio-btn dio-btn-secondary" id="cancelBtn">Ubah Institusi</button>
+        <button class="dio-btn dio-btn-primary" id="confirmBtn">Selanjutnya</button>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

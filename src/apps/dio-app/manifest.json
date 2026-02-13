@@ -1,0 +1,14 @@
+{
+  "id": "dio-app",
+  "name": "Dio App",
+  "author": "Your Name",
+  "version": "1.0.0",
+  "description": "Dio App - Institution Confirmation Dialog",
+  "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23fabe24' width='100' height='100' rx='12'/><path d='M50 25v20M50 70h.01' stroke='%2345474A' stroke-width='8' stroke-linecap='round'/></svg>",
+  "width": 520,
+  "height": 400,
+  "resizable": false,
+  "defaultWidth": 520,
+  "defaultHeight": 400,
+  "tags": ["utility", "dialog"]
+}
