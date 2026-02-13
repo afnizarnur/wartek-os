@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekomendasi Makan Malam</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="widget-content">
+    <div class="header">
+      <h1>🍽 Makan Malam</h1>
+      <p class="subtitle">Hari ini mau makan apa?</p>
+    </div>
+
+    <div class="category-filter">
+      <button class="category-btn active" data-category="all">Semua</button>
+      <button class="category-btn" data-category="indonesian">🇮🇩 Indo</button>
+      <button class="category-btn" data-category="western">🍔 Western</button>
+      <button class="category-btn" data-category="asian">🍜 Asian</button>
+    </div>
+
+    <div class="recommendation-card">
+      <div class="food-emoji" id="foodEmoji">🍕</div>
+      <h2 id="foodName">Pizza</h2>
+      <p class="food-category" id="foodCategory">Western</p>
+      <p class="food-description" id="foodDescription">Klasik italiano dengan keju meleleh dan topping favoritmu!</p>
+    </div>
+
+    <button class="random-btn" id="randomBtn">
+      🎲 Acak Rekomendasi
+    </button>
+
+    <div class="history-section">
+      <h3>Riwayat Rekomendasi</h3>
+      <ul class="history-list" id="historyList"></ul>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
