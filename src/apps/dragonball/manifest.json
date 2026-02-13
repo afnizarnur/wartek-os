@@ -1,0 +1,14 @@
+{
+  "id": "dragonball",
+  "name": "Dragon Ball",
+  "author": "v0",
+  "version": "1.0.0",
+  "description": "Browse Dragon Ball characters from the Dragon Ball API",
+  "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle fill='%23FF8C00' cx='50' cy='50' r='45'/><circle fill='%23FFD700' cx='50' cy='50' r='38'/><polygon fill='%23FF4500' points='50,20 55,40 75,40 58,52 65,72 50,58 35,72 42,52 25,40 45,40' opacity='0.8'/></svg>",
+  "width": 480,
+  "height": 560,
+  "resizable": true,
+  "defaultWidth": 480,
+  "defaultHeight": 560,
+  "tags": ["api", "characters", "dragonball"]
+}
