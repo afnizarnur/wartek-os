@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekomendasi Kopi Ciputat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="widget-content">
+    <div class="header">
+      <h1>☕ Kopi Ciputat</h1>
+      <p class="subtitle">Rekomendasi coffee shop favorit!</p>
+    </div>
+
+    <div class="category-filter">
+      <button class="category-btn active" data-category="all">Semua</button>
+      <button class="category-btn" data-category="milk">🥛 Milk Tea</button>
+      <button class="category-btn" data-category="coffee">☕ Coffee</button>
+      <button class="category-btn" data-category="cozy">🏠 Cozy</button>
+    </div>
+
+    <div class="recommendation-card">
+      <div class="shop-emoji" id="shopEmoji">🧋</div>
+      <h2 id="shopName">Kopi Janji Jiwa</h2>
+      <p class="shop-category" id="shopCategory">Milk Tea</p>
+      <p class="shop-address" id="shopAddress">Jl. Raya Ciputat No. 123</p>
+      <p class="shop-description" id="shopDescription">Minuman signature dengan harga terjangkau.</p>
+    </div>
+
+    <button class="random-btn" id="randomBtn">
+      🎲 Acak Rekomendasi
+    </button>
+
+    <div class="history-section">
+      <h3>Riwayat Rekomendasi</h3>
+      <ul class="history-list" id="historyList"></ul>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

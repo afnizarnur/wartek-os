@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StickyNote, Users, Palette, Timer, User, MessageSquare, Calendar, Utensils } from 'lucide-react';
+import { StickyNote, Users, Palette, Timer, User, MessageSquare, Calendar, Utensils, Coffee } from 'lucide-react';
 import './Dock.css';
 
 const iconMap = {
@@ -9,7 +9,8 @@ const iconMap = {
   'pomodoro': Timer,
   'forum-desain-publik': MessageSquare,
   'weton': Calendar,
-  'rekomendasi-makan-malam': Utensils
+  'rekomendasi-makan-malam': Utensils,
+  'rekomendasi-kopi-ciputat': Coffee
 };
 
 const iconColors = {
@@ -19,7 +20,8 @@ const iconColors = {
   'pomodoro': { bg: '#f87171', gauge: '#ef4444', fg: '#7f1d1d' },
   'forum-desain-publik': { bg: '#60a5fa', fg: '#1e40af' },
   'weton': { bg: '#fdba74', fg: '#9a3412' },
-  'rekomendasi-makan-malam': { bg: '#f97316', fg: '#fff' }
+  'rekomendasi-makan-malam': { bg: '#f97316', fg: '#fff' },
+  'rekomendasi-kopi-ciputat': { bg: '#6d28d9', fg: '#fff' }
 };
 
 export function Dock({ widgets, onOpen, activeWindows = [] }) {

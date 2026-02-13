@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makan Malam Hari Ini</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="widget-content">
+    <div class="header">
+      <h1>Makan Malam</h1>
+      <p class="subtitle">Hari ini mau makan apa?</p>
+    </div>
+    
+    <div class="category-buttons">
+      <button class="category-btn active" data-category="all">Semua</button>
+      <button class="category-btn" data-category="indonesian">Indonesia</button>
+      <button class="category-btn" data-category="western">Western</button>
+      <button class="category-btn" data-category="asian">Asian</button>
+    </div>
+
+    <div class="food-display">
+      <div class="food-card" id="foodCard">
+        <div class="food-emoji" id="foodEmoji">🍕</div>
+        <div class="food-name" id="foodName">Pizza</div>
+        <div class="food-category" id="foodCategory">Western</div>
+      </div>
+      <button class="recommend-btn" id="recommendBtn">Rekomendasikan!</button>
+    </div>
+
+    <div class="history-section">
+      <h3>Riwayat Rekomendasi</h3>
+      <ul class="history-list" id="historyList"></ul>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
