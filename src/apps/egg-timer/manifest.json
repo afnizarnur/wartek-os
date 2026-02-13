@@ -1,0 +1,14 @@
+{
+  "id": "egg-timer",
+  "name": "Egg Timer",
+  "author": "Wartek",
+  "version": "1.0.0",
+  "description": "Boiling egg timer with presets",
+  "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><ellipse cx='50' cy='55' rx='30' ry='38' fill='%23fbbf24'/><ellipse cx='50' cy='55' rx='24' ry='32' fill='%23fef3c7'/></svg>",
+  "width": 320,
+  "height": 420,
+  "resizable": false,
+  "defaultWidth": 320,
+  "defaultHeight": 420,
+  "tags": ["timer", "utility"]
+}
