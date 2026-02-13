@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kata-Kata Hari Ini</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="widget-container">
+    <div class="quote-card">
+      <div class="quote-icon">"</div>
+      <div class="quote-text" id="quoteText">Memuat quote...</div>
+      <div class="quote-author" id="quoteAuthor">- </div>
+    </div>
+    
+    <div class="category-selector">
+      <button class="category-btn active" data-category="all">Semua</button>
+      <button class="category-btn" data-category="motivasi">Motivasi</button>
+      <button class="category-btn" data-category="humor">Humor</button>
+      <button class="category-btn" data-category="religi">Religi</button>
+    </div>
+    
+    <div class="mode-selector">
+      <button class="mode-btn active" id="dailyMode">📅 Hari Ini</button>
+      <button class="mode-btn" id="randomMode">🎲 Acak</button>
+    </div>
+    
+    <div class="action-buttons">
+      <button class="action-btn refresh-btn" id="refreshBtn">
+        <span>🔄</span> Quote Baru
+      </button>
+      <button class="action-btn copy-btn" id="copyBtn">
+        <span>📋</span> Salin
+      </button>
+    </div>
+    
+    <div class="toast" id="toast">Quote disalin!</div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
