@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-import { StickyNote, Users, Palette, Timer, User, MessageSquare, Calendar, Utensils } from 'lucide-react';
-=======
-import { StickyNote, Users, Palette, Timer, User, MessageSquare, Quote } from 'lucide-react';
->>>>>>> Stashed changes
+import { StickyNote, Users, Palette, Timer, User, MessageSquare, Calendar, Utensils, Quote } from 'lucide-react';
 import './DesktopIcon.css';
 
 const iconMap = {
@@ -11,12 +7,9 @@ const iconMap = {
   'hex-converter': Palette,
   'pomodoro': Timer,
   'forum-desain-publik': MessageSquare,
-<<<<<<< Updated upstream
   'weton': Calendar,
-  'rekomendasi-makan-malam': Utensils
-=======
+  'rekomendasi-makan-malam': Utensils,
   'kata-kata-hari-ini': Quote
->>>>>>> Stashed changes
 };
 
 const iconColors = {
@@ -25,12 +18,9 @@ const iconColors = {
   'hex-converter': { bg: '#d8b4fe', fg: '#5b21b6' },
   'pomodoro': { bg: '#fca5a5', fg: '#991b1b' },
   'forum-desain-publik': { bg: '#93c5fd', fg: '#1e40af' },
-<<<<<<< Updated upstream
   'weton': { bg: '#fed7aa', fg: '#9a3412' },
-  'rekomendasi-makan-malam': { bg: '#fdba74', fg: '#7c2d12' }
-=======
+  'rekomendasi-makan-malam': { bg: '#fdba74', fg: '#7c2d12' },
   'kata-kata-hari-ini': { bg: '#fef3c7', fg: '#d97706' }
->>>>>>> Stashed changes
 };
 
 export function DesktopIcon({ widget, onOpen }) {
