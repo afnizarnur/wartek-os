@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StickyNote, Users, Palette, Timer, User, MessageSquare, Calendar, Utensils, Quote, AlertCircle } from 'lucide-react';
+import { StickyNote, Users, Palette, Timer, User, MessageSquare, Calendar, Utensils, Coffee, Quote, AlertCircle } from 'lucide-react';
 import './Dock.css';
 
 const iconMap = {
@@ -10,6 +10,7 @@ const iconMap = {
   'forum-desain-publik': MessageSquare,
   'weton': Calendar,
   'rekomendasi-makan-malam': Utensils,
+  'rekomendasi-kopi-ciputat': Coffee,
   'kata-kata-hari-ini': Quote,
   'dio-app': AlertCircle
 };
@@ -22,6 +23,7 @@ const iconColors = {
   'forum-desain-publik': { bg: '#60a5fa', fg: '#1e40af' },
   'weton': { bg: '#fdba74', fg: '#9a3412' },
   'rekomendasi-makan-malam': { bg: '#f97316', fg: '#fff' },
+  'rekomendasi-kopi-ciputat': { bg: '#6d28d9', fg: '#fff' },
   'kata-kata-hari-ini': { bg: '#fef3c7', fg: '#d97706' },
   'dio-app': { bg: '#fabe24', fg: '#45474a' }
 };
